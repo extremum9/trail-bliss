@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      sass:
+        specifier: 1.94.0
+        version: 1.94.0
       vite:
         specifier: 7.2.2
         version: 7.2.2(sass@1.94.0)
@@ -726,7 +729,6 @@ snapshots:
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.1.2
-    optional: true
 
   detect-libc@1.0.3:
     optional: true
@@ -772,8 +774,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  immutable@5.1.4:
-    optional: true
+  immutable@5.1.4: {}
 
   is-extglob@2.1.1:
     optional: true
@@ -810,8 +811,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  readdirp@4.1.2:
-    optional: true
+  readdirp@4.1.2: {}
 
   rollup@4.53.2:
     dependencies:
@@ -848,7 +848,6 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
-    optional: true
 
   source-map-js@1.2.1: {}
 
