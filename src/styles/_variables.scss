@@ -1,0 +1,17 @@
+@use "abstracts" as *;
+
+:root {
+	--light-color: #ffffff;
+	--accent-color: #ed952b;
+	--heading-color: #161616;
+	--text-color: #454444;
+	--background-color: #fefcf7;
+
+	--font-family-base: "Manrope", sans-serif;
+
+	--transition-duration: 0.2s;
+	--transition-timing-function: ease-in-out;
+
+	--container-max-width: #{toRem(1240)};
+	--container-padding-x: #{toRem(16)};
+}
