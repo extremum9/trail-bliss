@@ -1,0 +1,30 @@
+@use "abstracts" as *;
+
+body {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-width: toRem(320);
+	font-family: var(--font-family-base);
+	font-size: toRem(16);
+	color: var(--text-color);
+	background-color: var(--light-color);
+	&.prevent-scroll {
+		overflow: hidden;
+		overscroll-behavior: none;
+		touch-action: none;
+	}
+}
+
+p {
+	--paragraph-margin-bottom: #{toRem(10)};
+}
+
+button,
+a {
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+}
+
+a {
+	transition-property: color;
+}
