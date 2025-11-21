@@ -1,0 +1,35 @@
+@use "abstracts" as *;
+
+h1,
+h2,
+h3,
+h4,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+	font-weight: 700;
+	color: var(--heading-color);
+}
+
+h1,
+.heading-1 {
+	font-size: fluid(72, 32);
+	line-height: 1.1;
+}
+
+h2,
+.heading-2 {
+	font-size: fluid(48, 26);
+	line-height: 1.2;
+}
+
+h3,
+.heading-3 {
+	font-size: fluid(40, 32);
+}
+
+h3,
+.heading-3 {
+	font-size: fluid(24, 18);
+}
