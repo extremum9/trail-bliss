@@ -31,4 +31,8 @@
 			}
 		}
 	}
+
+	&-small {
+		padding: toRem(8) toRem(14);
+	}
 }
