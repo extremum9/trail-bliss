@@ -9,13 +9,42 @@
     <script src="/src/main.js" type="module"></script>
   </head>
   <body>
-    <div class="container">
-      <button class="button button-outline-primary" type="button">
-        Start Exploring
-        <svg width="24" height="24" aria-hidden="true">
-          <use href="/icons/sprite.svg#arrow-right"></use>
-        </svg>
-      </button>
-    </div>
+    <header class="topbar">
+      <nav class="topbar-nav container" aria-label="Primary">
+        <ul class="nav-list" role="list">
+          <li>
+            <a class="nav-link" href="#" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+
+        <a class="nav-brand" href="#" aria-current="page">
+          <img src="/icons/leaf.svg" alt />
+          Trail Bliss
+        </a>
+
+        <ul class="nav-list" role="list">
+          <li>
+            <a class="nav-link" href="#">Testimonial</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li>
+            <button
+              class="button button-outline-primary button-small"
+              type="button"
+            >
+              Contact Us
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
   </body>
 </html>
