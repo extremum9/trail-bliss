@@ -8,10 +8,10 @@
 	@return math.div($px, 16) + em;
 }
 
-@function fluid($maxSize, $minSize) {
-	$maxWidth: 1240;
-	$minWidth: 400;
+$viewportMaxWidth: 1240;
+$viewportMinWidth: 400;
 
+@function fluid($maxSize, $minSize, $maxWidth: $viewportMaxWidth, $minWidth: $viewportMinWidth) {
 	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
 	$intercept: $minSize - $slope * $minWidth;
 

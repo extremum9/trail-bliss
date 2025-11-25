@@ -1,3 +1,51 @@
+@mixin breakpoint-lg-up {
+	@media (min-width: toEm(992)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-md-up {
+	@media (min-width: toEm(768)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-sm-up {
+	@media (min-width: toEm(576)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-xs-up {
+	@media (min-width: toEm(480)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-lg-down {
+	@media (max-width: toEm(991.98)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-md-down {
+	@media (max-width: toEm(767.98)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-sm-down {
+	@media (max-width: toEm(575.98)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-xs-down {
+	@media (max-width: toEm(479.98)) {
+		@content;
+	}
+}
+
 @mixin hover {
 	@media (any-hover: hover) {
 		&:hover {

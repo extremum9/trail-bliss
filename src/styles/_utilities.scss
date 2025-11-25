@@ -14,6 +14,19 @@
 	}
 }
 
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: toRem(12);
+	padding-block: toRem(5);
+	font-size: toRem(18);
+	font-weight: 500;
+	color: var(--primary-color);
+	@include hover {
+		color: var(--accent-color);
+	}
+}
+
 .section-head {
 	display: grid;
 	justify-items: start;
