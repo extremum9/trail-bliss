@@ -1,23 +1,74 @@
 @use "../abstracts" as *;
 
 .topbar {
-	padding-block-start: toRem(40);
-	&-nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: toRem(30);
-		padding: toRem(24) toRem(40);
-		color: var(--primary-color);
+	margin-block-start: fluid(40, 20);
+	.container {
+		padding: fluid(24, 20) fluid(40, 20);
 		background-color: var(--cream-lite-color);
 		border-radius: toRem(60);
-		> :last-child {
-			justify-content: end;
-		}
 	}
 }
 
 .nav {
+	&-desktop,
+	&-mobile {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(30);
+	}
+
+	&-desktop {
+		> :last-child {
+			justify-content: end;
+		}
+
+		@include breakpoint-lg-down {
+			display: none;
+		}
+	}
+
+	&-mobile {
+		@include breakpoint-lg-up {
+			display: none;
+		}
+	}
+
+	&-menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: toRem(20);
+		position: fixed;
+		inset: toRem(130) var(--container-padding-x) auto;
+		max-width: toRem(400);
+		margin-inline-start: auto;
+		padding: toRem(30);
+		scale: 1 0;
+		transform-origin: 50% 0;
+		opacity: 0;
+		visibility: hidden;
+		overflow-y: auto;
+		text-align: center;
+		border-radius: toRem(8);
+		background-color: var(--cream-lite-color);
+		transition:
+			scale var(--transition-duration) var(--transition-timing-function),
+			opacity var(--transition-duration) var(--transition-timing-function),
+			visibility var(--transition-duration) var(--transition-timing-function);
+		.menu-open & {
+			scale: 1;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@include breakpoint-sm-down {
+			inset-block-start: toRem(110);
+			max-width: 100%;
+			padding: toRem(20);
+		}
+	}
+
 	&-brand {
 		flex-shrink: 0;
 	}
@@ -29,12 +80,68 @@
 		gap: toRem(8) toRem(32);
 		font-size: fluid(20, 18, $viewportMaxWidth, 992);
 		font-weight: 500;
+		color: var(--primary-color);
+		@include breakpoint-lg-down {
+			flex-direction: column;
+			row-gap: toRem(16);
+			font-size: toRem(20);
+		}
 	}
 
 	&-link {
 		padding-block: toRem(5);
 		@include hover {
 			color: var(--accent-color);
+		}
+	}
+
+	&-toggle-button {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-shrink: 0;
+		width: toRem(40);
+		height: toRem(30);
+		padding: toRem(5);
+		transition: rotate var(--transition-duration) var(transition-timing-function);
+		@include hover {
+			color: var(--primary-color);
+		}
+
+		.menu-open & {
+			rotate: -45deg;
+			&::before {
+				translate: 0 toRem(9);
+				rotate: -90deg;
+			}
+
+			&::after {
+				opacity: 0;
+			}
+		}
+
+		&::before,
+		&::after,
+		span {
+			width: 100%;
+			height: toRem(2);
+			background-color: currentColor;
+			transition: background-color var(--transition-duration) var(--transition-timing-function);
+		}
+
+		&::before,
+		&::after {
+			content: "";
+		}
+
+		&::before {
+			transition:
+				translate var(--transition-duration) var(--transition-timing-function),
+				rotate var(--transition-duration) var(--transition-timing-function);
+		}
+
+		&::after {
+			transition: opacity var(--transition-duration) var(--transition-timing-function);
 		}
 	}
 }

@@ -10,40 +10,85 @@
   </head>
   <body>
     <header class="topbar">
-      <nav class="topbar-nav container" aria-label="Primary">
-        <ul class="nav-list" role="list">
-          <li>
-            <a class="nav-link" href="#" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-        </ul>
+      <nav class="container" aria-label="Primary">
+        <div class="nav-desktop">
+          <ul class="nav-list" role="list">
+            <li>
+              <a class="nav-link" href="#" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
 
-        <a class="nav-brand brand" href="#" aria-current="page">
-          <img src="/icons/leaf.svg" alt />
-          Trail Bliss
-        </a>
+          <a class="nav-brand brand" href="#" aria-current="page">
+            <img src="/icons/leaf.svg" alt />
+            Trail Bliss
+          </a>
 
-        <ul class="nav-list" role="list">
-          <li>
-            <a class="nav-link" href="#">Testimonial</a>
-          </li>
-          <li>
-            <a class="nav-link" href="#">FAQ</a>
-          </li>
-          <li>
+          <ul class="nav-list" role="list">
+            <li>
+              <a class="nav-link" href="#">Testimonial</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li>
+              <button
+                class="button button-outline-primary button-small"
+                type="button"
+              >
+                Contact Us
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-mobile">
+          <a class="nav-brand brand" href="#" aria-current="page">
+            <img src="/icons/leaf.svg" alt />
+            Trail Bliss
+          </a>
+
+          <div id="nav-menu" class="nav-menu">
+            <ul class="nav-list">
+              <li>
+                <a class="nav-link" href="#" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Testimonial</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+            </ul>
             <button
               class="button button-outline-primary button-small"
               type="button"
             >
               Contact Us
             </button>
-          </li>
-        </ul>
+          </div>
+
+          <button
+            class="nav-toggle-button"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+        </div>
       </nav>
     </header>
   </body>

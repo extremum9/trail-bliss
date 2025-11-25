@@ -1,3 +1,5 @@
+@use "functions" as *;
+
 @mixin breakpoint-lg-up {
 	@media (min-width: toEm(992)) {
 		@content;
