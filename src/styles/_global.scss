@@ -1,30 +1,29 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
 body {
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	min-width: toRem(320);
-	font-family: var(--font-family-base);
-	font-size: toRem(16);
-	color: var(--gray-dark-color);
-	background-color: var(--light-color);
-	&.prevent-scroll {
-		overflow: hidden;
-		overscroll-behavior: none;
-		touch-action: none;
-	}
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-width: toRem(320);
+  font-family: var(--font-family-base);
+  font-size: toRem(16);
+  color: var(--gray-dark-color);
+  background-color: var(--light-color);
+  &.prevent-scroll {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
 }
 
 p {
-	--paragraph-margin-bottom: #{toRem(10)};
+  --paragraph-margin-bottom: #{toRem(10)};
 }
 
 button,
 a {
-	transition-duration: var(--transition-duration);
-	transition-timing-function: var(--transition-timing-function);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 a {
-	transition-property: color;
+  transition-property: color;
 }
