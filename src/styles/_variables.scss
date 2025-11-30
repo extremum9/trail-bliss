@@ -1,18 +1,18 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
 :root {
-	--light-color: #ffffff;
-	--primary-color: #161616;
-	--gray-dark-color: #454444;
-	--accent-color: #ed952b;
-	--cream-color: #fbf1d6;
-	--cream-lite-color: #fefcf7;
+  --light-color: #ffffff;
+  --primary-color: #161616;
+  --gray-dark-color: #454444;
+  --accent-color: #ed952b;
+  --cream-color: #fbf1d6;
+  --cream-lite-color: #fefcf7;
 
-	--font-family-base: "Manrope", sans-serif;
+  --font-family-base: 'Manrope', sans-serif;
 
-	--transition-duration: 0.2s;
-	--transition-timing-function: ease-in-out;
+  --transition-duration: 0.2s;
+  --transition-timing-function: ease-in-out;
 
-	--container-max-width: #{toRem(1240)};
-	--container-padding-x: #{toRem(16)};
+  --container-max-width: #{toRem(1240)};
+  --container-padding-x: #{toRem(16)};
 }

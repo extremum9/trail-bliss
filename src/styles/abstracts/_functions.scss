@@ -1,19 +1,28 @@
-@use "sass:math";
+@use 'sass:math';
 
 @function toRem($px) {
-	@return math.div($px, 16) + rem;
+  @return math.div($px, 16) + rem;
 }
 
 @function toEm($px) {
-	@return math.div($px, 16) + em;
+  @return math.div($px, 16) + em;
 }
 
 $viewportMaxWidth: 1240;
 $viewportMinWidth: 400;
 
-@function fluid($maxSize, $minSize, $maxWidth: $viewportMaxWidth, $minWidth: $viewportMinWidth) {
-	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
-	$intercept: $minSize - $slope * $minWidth;
+@function fluid(
+  $maxSize,
+  $minSize,
+  $maxWidth: $viewportMaxWidth,
+  $minWidth: $viewportMinWidth
+) {
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $intercept: $minSize - $slope * $minWidth;
 
-	@return clamp(toRem($minSize), toRem($intercept) + #{$slope * 100vw}, toRem($maxSize));
+  @return clamp(
+    toRem($minSize),
+    toRem($intercept) + #{$slope * 100vw},
+    toRem($maxSize)
+  );
 }

@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .topbar {
-  margin-block-start: fluid(40, 20);
+  padding-block-start: fluid(40, 20);
   .container {
     padding: fluid(24, 20) fluid(40, 20);
     background-color: var(--cream-lite-color);
@@ -40,37 +40,41 @@
     align-items: center;
     row-gap: toRem(20);
     position: fixed;
-    inset: toRem(130) var(--container-padding-x) auto;
-    max-width: toRem(400);
-    margin-inline-start: auto;
-    padding: toRem(30);
-    scale: 1 0;
-    transform-origin: 50% 0;
+    inset: 0;
+    padding: var(--topbar-height, 0) var(--container-padding-x) toRem(40);
     opacity: 0;
     visibility: hidden;
     overflow-y: auto;
     text-align: center;
-    border-radius: toRem(60);
     background-color: var(--cream-lite-color);
     transition:
-      scale var(--transition-duration) var(--transition-timing-function),
       opacity var(--transition-duration) var(--transition-timing-function),
       visibility var(--transition-duration) var(--transition-timing-function);
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--topbar-height, 0);
+      background-color: inherit;
+    }
+
     .menu-open & {
-      scale: 1;
       opacity: 1;
       visibility: visible;
     }
 
-    @include breakpoint-sm-down {
-      inset-block-start: toRem(115);
-      max-width: 100%;
-      padding: toRem(20);
+    .button {
+      padding: toRem(18) toRem(30);
+      font-size: toRem(20);
     }
   }
 
   &-brand {
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
   }
 
   &-list {
@@ -83,8 +87,10 @@
     color: var(--primary-color);
     @include breakpoint-lg-down {
       flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
       row-gap: toRem(16);
-      font-size: toRem(20);
+      font-size: toRem(30);
     }
   }
 
@@ -104,7 +110,7 @@
     height: toRem(30);
     padding: toRem(5);
     transition: rotate var(--transition-duration)
-      var(transition-timing-function);
+      var(--transition-timing-function);
     @include hover {
       color: var(--primary-color);
     }

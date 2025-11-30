@@ -2,6 +2,7 @@ import { toEm } from './utilities.js';
 
 const initTopbar = () => {
   const selectors = {
+    root: '.js-topbar',
     toggleButton: '.js-nav-toggle-button'
   };
 
@@ -11,21 +12,29 @@ const initTopbar = () => {
   };
 
   const body = document.body;
+  const root = document.querySelector(selectors.root);
   const toggleButton = document.querySelector(selectors.toggleButton);
   const tabletMediaQuery = window.matchMedia(`(max-width: ${toEm(991.98)})`);
 
+  const updateHeight = () =>
+    root.style.setProperty('--topbar-height', `${root.offsetHeight}px`);
+  const resizeObserver = new ResizeObserver(updateHeight);
+
+  resizeObserver.observe(root);
+  updateHeight();
+
   const toggleMenu = () => {
     body.classList.toggle(stateClasses.preventScroll);
-    body.classList.contains(stateClasses.menuOpen)
+    root.classList.contains(stateClasses.menuOpen)
       ? toggleButton.setAttribute('aria-expanded', 'false')
       : toggleButton.setAttribute('aria-expanded', 'true');
-    body.classList.toggle(stateClasses.menuOpen);
+    root.classList.toggle(stateClasses.menuOpen);
   };
 
   const resetMenu = (mediaQuery) => {
     if (!mediaQuery.matches) {
       body.classList.remove(stateClasses.preventScroll);
-      body.classList.remove(stateClasses.menuOpen);
+      root.classList.remove(stateClasses.menuOpen);
       toggleButton.setAttribute('aria-expanded', 'false');
     }
   };

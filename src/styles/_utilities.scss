@@ -1,44 +1,47 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
 .container {
-	width: min(var(--container-max-width), 100% - (var(--container-padding-x) * 2));
-	margin-inline: auto;
+  width: min(
+    var(--container-max-width),
+    100% - (var(--container-padding-x) * 2)
+  );
+  margin-inline: auto;
 }
 
 .stretched-link {
-	&::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-	}
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
 }
 
 .brand {
-	display: inline-flex;
-	align-items: center;
-	gap: toRem(12);
-	padding-block: toRem(5);
-	font-size: toRem(18);
-	font-weight: 500;
-	color: var(--primary-color);
-	@include hover {
-		color: var(--accent-color);
-	}
+  display: inline-flex;
+  align-items: center;
+  gap: toRem(12);
+  padding-block: toRem(5);
+  font-size: toRem(18);
+  font-weight: 500;
+  color: var(--primary-color);
+  @include hover {
+    color: var(--accent-color);
+  }
 }
 
 .section-head {
-	display: grid;
-	justify-items: start;
-	row-gap: toRem(24);
+  display: grid;
+  justify-items: start;
+  row-gap: toRem(24);
 }
 
 .section-subtitle {
-	font-size: fluid(24, 18);
-	font-weight: 500;
+  font-size: fluid(24, 18);
+  font-weight: 500;
 }
 
 .section-text {
-	font-size: fluid(20, 16);
-	font-weight: 500;
+  font-size: fluid(20, 16);
+  font-weight: 500;
 }
