@@ -102,55 +102,6 @@
   }
 
   &-toggle-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-shrink: 0;
-    width: toRem(40);
-    height: toRem(30);
-    padding: toRem(5);
-    transition: rotate var(--transition-duration)
-      var(--transition-timing-function);
-    @include hover {
-      color: var(--primary-color);
-    }
-
-    .menu-open & {
-      rotate: -45deg;
-      &::before {
-        translate: 0 toRem(9);
-        rotate: -90deg;
-      }
-
-      &::after {
-        opacity: 0;
-      }
-    }
-
-    &::before,
-    &::after,
-    span {
-      width: 100%;
-      height: toRem(2);
-      background-color: currentColor;
-      transition: background-color var(--transition-duration)
-        var(--transition-timing-function);
-    }
-
-    &::before,
-    &::after {
-      content: '';
-    }
-
-    &::before {
-      transition:
-        translate var(--transition-duration) var(--transition-timing-function),
-        rotate var(--transition-duration) var(--transition-timing-function);
-    }
-
-    &::after {
-      transition: opacity var(--transition-duration)
-        var(--transition-timing-function);
-    }
+    @include hamburger-button;
   }
 }
