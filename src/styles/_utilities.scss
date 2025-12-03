@@ -8,6 +8,10 @@
   margin-inline: auto;
 }
 
+.sr-only {
+  @include sr-only;
+}
+
 .stretched-link {
   &::before {
     content: '';
@@ -30,18 +34,20 @@
   }
 }
 
-.section-head {
-  display: grid;
-  justify-items: start;
-  row-gap: toRem(24);
-}
+.section {
+  &-top {
+    display: grid;
+    justify-items: start;
+    row-gap: toRem(24);
+  }
 
-.section-subtitle {
-  font-size: fluid(24, 18);
-  font-weight: 500;
-}
+  &-subtitle {
+    font-size: fluid(24, 18);
+    font-weight: 500;
+  }
 
-.section-text {
-  font-size: fluid(20, 16);
-  font-weight: 500;
+  &-text {
+    font-size: fluid(20, 16);
+    font-weight: 500;
+  }
 }
