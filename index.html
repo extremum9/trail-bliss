@@ -92,13 +92,13 @@
       </nav>
     </header>
 
-    <main>main</main>
+    <main></main>
 
     <footer class="footer" aria-labelledby="footer-heading">
       <h2 id="footer-heading" class="sr-only">Footer</h2>
       <div class="container">
         <div class="footer-body">
-          <div class="footer-about">
+          <div class="footer-info">
             <a class="footer-brand brand" href="#" aria-current="page">
               <img src="/icons/leaf.svg" alt />
               Trail Bliss
@@ -110,7 +110,7 @@
 
           <nav class="footer-nav">
             <ul class="footer-nav-list" role="list" aria-label="Secondary">
-              <li>
+              <li class="footer-nav-item">
                 <h3 class="footer-nav-title">Contact</h3>
                 <ul class="footer-nav-links" role="list">
                   <li>
@@ -133,7 +133,7 @@
                 </ul>
               </li>
 
-              <li>
+              <li class="footer-nav-item">
                 <h3 class="footer-nav-title">Quick links</h3>
                 <ul class="footer-nav-links" role="list">
                   <li>
@@ -148,7 +148,7 @@
                 </ul>
               </li>
 
-              <li>
+              <li class="footer-nav-item">
                 <h3 class="footer-nav-title">Follow us</h3>
                 <ul class="footer-nav-links" role="list">
                   <li>
@@ -171,21 +171,26 @@
             </ul>
           </nav>
 
-          <div class="footer-cta">
-            <a class="heading-3" href="#">
-              We are available all the time. Contact us today!
-              <svg width="36" height="36" aria-hidden="true">
-                <use href="/icons/sprite.svg#arrow-up-right-circle"></use>
-              </svg>
-            </a>
-          </div>
+          <a class="footer-cta-link heading-3" href="#">
+            We are available all the time. Contact us today!
+            <svg width="36" height="36" aria-hidden="true">
+              <use href="/icons/sprite.svg#arrow-up-right-circle"></use>
+            </svg>
+          </a>
         </div>
 
         <div class="footer-bottom">
-          <small class="footer-copyright">© 2025. All rights reserved.</small>
-          <ul role="list" aria-label="Social links">
+          <small class="footer-copyright-text"
+            >© 2025. All rights reserved.</small
+          >
+          <ul class="social-links" role="list" aria-label="Social links">
             <li>
-              <a href="#" target="_blank" aria-label="Twitter">
+              <a
+                class="social-link"
+                href="#"
+                target="_blank"
+                aria-label="Twitter"
+              >
                 <svg width="20" height="17" aria-hidden="true">
                   <use href="/icons/sprite.svg#twitter"></use>
                 </svg>
@@ -193,15 +198,25 @@
             </li>
 
             <li>
-              <a href="#" target="_blank" aria-label="Linkedin">
-                <svg width="20" height="17" aria-hidden="true">
+              <a
+                class="social-link"
+                href="#"
+                target="_blank"
+                aria-label="Linkedin"
+              >
+                <svg width="20" height="20" aria-hidden="true">
                   <use href="/icons/sprite.svg#linkedin"></use>
                 </svg>
               </a>
             </li>
 
             <li>
-              <a href="#" target="_blank" aria-label="Facebook">
+              <a
+                class="social-link"
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <svg width="20" height="20" aria-hidden="true">
                   <use href="/icons/sprite.svg#facebook"></use>
                 </svg>
@@ -209,8 +224,13 @@
             </li>
 
             <li>
-              <a href="#" target="_blank" aria-label="Dribbble">
-                <svg width="20" height="17" aria-hidden="true">
+              <a
+                class="social-link"
+                href="#"
+                target="_blank"
+                aria-label="Dribbble"
+              >
+                <svg width="20" height="20" aria-hidden="true">
                   <use href="/icons/sprite.svg#dribbble"></use>
                 </svg>
               </a>

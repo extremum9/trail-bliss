@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: toRem(24);
+}
+
+.social-link {
+  vertical-align: middle;
+  @include hover {
+    color: var(--accent-color);
+  }
+}
