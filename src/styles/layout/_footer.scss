@@ -3,24 +3,45 @@
 .footer {
   --container-max-width: #{toRem(1360)};
 
-  padding-block-end: toRem(40);
+  padding-block-end: fluid(40, 20);
   color: var(--primary-color);
   .container {
-    padding: toRem(60) toRem(40);
+    padding: fluid(60, 20) fluid(40, 20);
     border-radius: toRem(40);
     background-color: var(--cream-lite-color);
   }
 
   &-body {
     display: grid;
-    grid-template-columns: 1fr repeat(3, 0.7fr) 1fr;
+    grid-template-columns: 1fr repeat(3, 0.6fr) 1fr;
     gap: toRem(24);
-    margin-block-end: toRem(72);
+    margin-block-end: fluid(72, 40);
+    @include breakpoint-lg-down {
+      grid-template-columns: 1fr repeat(3, 0.5fr);
+    }
+
+    @include breakpoint-md-down {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
   }
 
   &-brand {
     margin-block-end: toRem(6);
     font-size: toRem(20);
+    @include breakpoint-md-down {
+      font-size: toRem(26);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+  }
+
+  &-address {
+    max-width: toRem(252);
+    @include breakpoint-md-down {
+      font-weight: 500;
+    }
   }
 
   &-nav {
@@ -29,18 +50,15 @@
       display: contents;
     }
 
-    &-item {
-      display: grid;
-      row-gap: toRem(2);
-    }
-
     &-title {
-      font-size: toRem(18);
+      margin-block-end: toRem(6);
+      font-size: fluid(18, 16);
       font-weight: 500;
     }
 
     &-links {
-      display: contents;
+      display: grid;
+      row-gap: toRem(2);
     }
 
     &-link {
@@ -49,14 +67,29 @@
       @include hover {
         color: var(--accent-color);
       }
+
+      @include breakpoint-md-down {
+        color: var(--gray-dark-color);
+      }
     }
   }
 
   &-cta-link {
-    align-items: center;
+    gap: toRem(12) toRem(20);
     font-weight: 500;
     @include hover {
       color: var(--accent-color);
+    }
+
+    svg {
+      align-self: center;
+      width: fluid(36, 28);
+      height: fluid(36, 28);
+    }
+
+    @include breakpoint-md-down {
+      flex-direction: column;
+      max-width: toRem(184);
     }
   }
 
@@ -64,6 +97,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: toRem(20) toRem(12);
+    @include breakpoint-md-down {
+      flex-direction: column-reverse;
+    }
   }
 
   &-copyright-text {

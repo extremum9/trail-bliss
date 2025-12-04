@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: toRem(24);
+  gap: toRem(12) toRem(24);
 }
 
 .social-link {
