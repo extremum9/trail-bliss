@@ -55,8 +55,8 @@
   }
 
   &::before {
-    transition:
-      translate var(--transition-duration) var(--transition-timing-function),
+    transition: translate var(--transition-duration)
+        var(--transition-timing-function),
       rotate var(--transition-duration) var(--transition-timing-function);
   }
 
