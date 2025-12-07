@@ -1,11 +1,11 @@
 @use 'abstracts' as *;
 
 .padding-block-80 {
-  padding-block: toRem(80);
+  padding-block: fluid(80, 20);
 }
 
 .padding-block-120 {
-  padding-block: toRem(120);
+  padding-block: fluid(120, 40);
 }
 
 .container {
@@ -47,11 +47,15 @@
   &-intro-split {
     display: grid;
     gap: fluid(24, 20);
+    @include breakpoint-md-down {
+      text-align: center;
+    }
   }
 
   &-intro {
     justify-items: start;
     &-split {
+      align-items: start;
       justify-content: space-between;
     }
   }

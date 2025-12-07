@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.hero {
+  &-section {
+    .section-intro-split {
+      margin-block-end: fluid(40, 20);
+      @include breakpoint-md-up {
+        grid-template-columns: 0.67fr 0.33fr;
+      }
+    }
+
+    .section-subtitle {
+      margin-block-end: fluid(24, 20);
+    }
+  }
+
+  &-image {
+    width: 100%;
+    aspect-ratio: 1200 / 500;
+    border-radius: toRem(24);
+    @include breakpoint-xs-down {
+      aspect-ratio: 362 / 280;
+    }
+  }
+}

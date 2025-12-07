@@ -116,9 +116,21 @@
             </div>
           </header>
 
-          <div class="hero-image">
-            <img src="/images/hero-image.jpg" width="1240" height="500" alt />
-          </div>
+          <picture>
+            <source
+              media="(max-width: 29.99875em)"
+              srcset="/images/hero/hero-image-mobile.jpg"
+              width="362"
+              height="280"
+            />
+            <img
+              class="hero-image"
+              src="/images/hero/hero-image.jpg"
+              width="1240"
+              height="500"
+              alt
+            />
+          </picture>
         </div>
       </section>
     </main>
