@@ -1,13 +1,5 @@
 @use 'abstracts' as *;
 
-.padding-block-80 {
-  padding-block: fluid(80, 20);
-}
-
-.padding-block-120 {
-  padding-block: fluid(120, 40);
-}
-
 .container {
   width: min(
     var(--container-max-width),
@@ -43,23 +35,6 @@
 }
 
 .section {
-  &-intro,
-  &-intro-split {
-    display: grid;
-    gap: fluid(24, 20);
-    @include breakpoint-md-down {
-      text-align: center;
-    }
-  }
-
-  &-intro {
-    justify-items: start;
-    &-split {
-      align-items: start;
-      justify-content: space-between;
-    }
-  }
-
   &-subtitle {
     font-size: fluid(24, 18);
     font-weight: 500;
@@ -68,5 +43,63 @@
   &-supporting-text {
     font-size: fluid(20, 16);
     font-weight: 500;
+  }
+}
+
+.text-center {
+  text-align: center;
+  &-md {
+    @include breakpoint-md-down {
+      text-align: center;
+    }
+  }
+}
+
+.grid-columns-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  @include breakpoint-md-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-column {
+  &-full {
+    grid-column: 1 / -1;
+  }
+
+  &-span-2 {
+    grid-column: span 2;
+  }
+
+  &-span-3 {
+    grid-column: span 3;
+  }
+
+  &-span-4 {
+    grid-column: span 4;
+  }
+
+  &-span-8 {
+    grid-column: span 8;
+  }
+
+  &-span-2,
+  &-span-3,
+  &-span-4,
+  &-span-8 {
+    @include breakpoint-md-down {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.padding-block {
+  &-80 {
+    padding-block: fluid(80, 20);
+  }
+
+  &-120 {
+    padding-block: fluid(120, 40);
   }
 }
