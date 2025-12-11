@@ -1,0 +1,136 @@
+@use '../abstracts' as *;
+
+.feature {
+  &-section {
+    background-color: var(--cream-lite-color);
+    .container {
+      align-items: start;
+      gap: fluid(52, 40) fluid(24, 20);
+    }
+
+    .section-subtitle {
+      grid-column: 8 / -1;
+      color: var(--primary-color);
+    }
+  }
+
+  &-title {
+    grid-column: 1 / 7;
+  }
+
+  &-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: toRem(16);
+    &-layout-bottom,
+    &-layout-spread {
+      .feature-card-content {
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(16);
+      }
+    }
+
+    &-layout-bottom,
+    &-video {
+      &::before {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 79%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+      }
+    }
+
+    &-layout-bottom {
+      .feature-card-content {
+        align-self: end;
+        align-items: center;
+      }
+    }
+
+    &-layout-spread {
+      &::before {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0) 35.7%
+        );
+      }
+
+      .feature-card-content {
+        flex-direction: column;
+      }
+    }
+
+    &-cover {
+      display: grid;
+      isolation: isolate;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+
+      @include hover {
+        .feature-card-image {
+          scale: 1.1;
+        }
+      }
+    }
+
+    &-info {
+      height: 100%;
+      background-color: #d3f5fe;
+      .feature-card-title {
+        margin-block-end: fluid(20, 12);
+        color: var(--primary-color);
+      }
+    }
+
+    &-video {
+      .feature-card-content {
+        display: grid;
+        place-content: center;
+      }
+    }
+
+    &-image,
+    &-content {
+      grid-area: 1 / 1;
+    }
+
+    &-image {
+      z-index: -1;
+      height: 100%;
+      scale: 1.001;
+      transition: var(--transition-duration) var(--transition-timing-function)
+        scale;
+    }
+
+    &-content {
+      z-index: 1;
+      padding: toRem(20);
+    }
+
+    &-title {
+      color: var(--light-color);
+    }
+
+    &-description {
+      font-size: fluid(18, 14);
+      font-weight: 500;
+    }
+
+    &-icon {
+      display: inline-grid;
+      place-content: center;
+      flex-shrink: 0;
+      width: toRem(40);
+      height: toRem(40);
+      color: var(--light-color);
+      border-radius: 50%;
+      background-color: var(--accent-color);
+    }
+  }
+}
