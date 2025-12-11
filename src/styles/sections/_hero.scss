@@ -2,11 +2,8 @@
 
 .hero {
   &-section {
-    .section-intro-split {
-      margin-block-end: fluid(40, 20);
-      @include breakpoint-md-up {
-        grid-template-columns: 0.67fr 0.33fr;
-      }
+    .container {
+      gap: fluid(40, 20) fluid(24, 20);
     }
 
     .section-subtitle {
