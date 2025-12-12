@@ -3,7 +3,7 @@
 .hero {
   &-section {
     .container {
-      gap: fluid(40, 20) fluid(24, 20);
+      --row-gap: #{fluid(40, 20)};
     }
 
     .section-subtitle {
@@ -13,7 +13,7 @@
 
   &-image {
     width: 100%;
-    aspect-ratio: 1200 / 500;
+    aspect-ratio: 1240 / 500;
     border-radius: toRem(24);
     @include breakpoint-xs-down {
       aspect-ratio: 362 / 280;

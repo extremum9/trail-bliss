@@ -50,7 +50,7 @@
   text-align: center;
   &-md {
     @include breakpoint-md-down {
-      text-align: center;
+      text-align: center !important;
     }
   }
 }
@@ -58,6 +58,7 @@
 .grid-columns-12 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  gap: var(--row-gap, fluid(24, 20)) var(--column-gap, fluid(24, 20));
   @include breakpoint-md-down {
     grid-template-columns: 1fr;
   }
