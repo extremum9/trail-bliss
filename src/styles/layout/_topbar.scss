@@ -1,11 +1,24 @@
 @use '../abstracts' as *;
 
 .topbar {
-  padding-block-start: fluid(40, 20);
+  --topbar-padding-block-start: #{fluid(40, 20)};
+
+  position: sticky;
+  top: calc(var(--topbar-padding-block-start) * (-0.75));
+  z-index: 100;
+  padding-block-start: var(--topbar-padding-block-start);
+  &.scroll {
+    .container {
+      box-shadow: 0 0 0.5rem 0 var(--primary-color);
+    }
+  }
+
   .container {
     padding: fluid(24, 20) fluid(40, 20);
     background-color: var(--cream-lite-color);
     border-radius: toRem(60);
+    transition: box-shadow var(--transition-duration)
+      var(--transition-timing-function);
   }
 }
 
@@ -50,8 +63,8 @@
     overflow-y: auto;
     text-align: center;
     background-color: var(--cream-lite-color);
-    transition:
-      opacity var(--transition-duration) var(--transition-timing-function),
+    transition: opacity var(--transition-duration)
+        var(--transition-timing-function),
       visibility var(--transition-duration) var(--transition-timing-function);
     &::before {
       content: '';

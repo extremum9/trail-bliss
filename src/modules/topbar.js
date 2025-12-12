@@ -1,4 +1,4 @@
-import { toEm } from './utilities.js';
+import { throttle, toEm } from './utilities.js';
 
 const initTopbar = () => {
   const selectors = {
@@ -39,9 +39,18 @@ const initTopbar = () => {
     }
   };
 
+  const scrollThreshold = 30;
+  const toggleScrollClass = () => {
+    window.scrollY > scrollThreshold
+      ? root.classList.add('scroll')
+      : root.classList.remove('scroll');
+  };
+
   toggleButton.addEventListener('click', toggleMenu);
   tabletMediaQuery.addEventListener('change', resetMenu);
+  window.addEventListener('scroll', throttle(toggleScrollClass));
   resetMenu(tabletMediaQuery);
+  toggleScrollClass();
 };
 
 export default initTopbar;
