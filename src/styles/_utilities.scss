@@ -35,6 +35,12 @@
 }
 
 .section {
+  &-content {
+    display: grid;
+    justify-items: start;
+    row-gap: fluid(24, 20);
+  }
+
   &-subtitle {
     font-size: fluid(24, 18);
     font-weight: 500;
