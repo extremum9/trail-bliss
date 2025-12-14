@@ -39,6 +39,9 @@
     display: grid;
     justify-items: start;
     row-gap: fluid(24, 20);
+    @include breakpoint-md-down {
+      justify-items: center;
+    }
   }
 
   &-subtitle {
