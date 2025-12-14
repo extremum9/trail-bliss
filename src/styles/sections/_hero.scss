@@ -12,11 +12,14 @@
   }
 
   &-image {
-    width: 100%;
-    aspect-ratio: 1240 / 500;
-    border-radius: toRem(24);
-    @include breakpoint-xs-down {
-      aspect-ratio: 362 / 280;
+    grid-column: 1 / -1;
+    img {
+      width: 100%;
+      aspect-ratio: 1240 / 500;
+      border-radius: toRem(24);
+      @include breakpoint-xs-down {
+        aspect-ratio: 362 / 280;
+      }
     }
   }
 }
