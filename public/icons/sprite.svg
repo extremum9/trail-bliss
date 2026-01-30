@@ -3,6 +3,10 @@
 		<path stroke="currentColor" d="M16 19C16 18.258 16.733 17.15 17.475 16.22C18.429 15.02 19.569 13.973 20.876 13.174C21.856 12.575 23.044 12 24 12M24 12C23.044 12 21.855 11.425 20.876 10.826C19.569 10.026 18.429 8.979 17.475 7.781C16.733 6.85 16 5.74 16 5M24 12H0" />
 	</symbol>
 
+	<symbol id="arrow-right-plain" viewBox="0 0 8 13">
+		<path fill="currentColor" d="M-3.91006e-05 1.05997L1.06096 -2.86102e-05L6.83996 5.77697C6.93312 5.86954 7.00704 5.97961 7.05749 6.10086C7.10794 6.22212 7.13391 6.35214 7.13391 6.48347C7.13391 6.6148 7.10794 6.74483 7.05749 6.86608C7.00704 6.98733 6.93312 7.0974 6.83996 7.18997L1.06096 12.97L0.000960827 11.91L5.42496 6.48497L-3.91006e-05 1.05997Z" />
+	</symbol>
+
 	<symbol id="arrow-up-right" viewBox="0 0 20 20">
 		<path fill="none" stroke="currentColor" d="M5.59961 5.60156H13.5996V13.6016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 		<path fill="none" stroke="currentColor" d="M5.59961 13.6016L13.5996 5.60156" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
