@@ -5,7 +5,7 @@
 
   padding-block-end: fluid(40, 20);
   color: var(--primary-color);
-  .container {
+  &-container {
     padding: fluid(60, 20) fluid(40, 20);
     border-radius: toRem(40);
     background-color: var(--cream-lite-color);

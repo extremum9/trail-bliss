@@ -15,4 +15,7 @@
 
   --container-max-width: #{toRem(1240)};
   --container-padding-x: #{toRem(16)};
+
+  --section-padding-y-sm: #{fluid(80, 40)};
+  --section-padding-y-lg: #{fluid(120, 40)};
 }

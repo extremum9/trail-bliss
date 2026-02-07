@@ -1,18 +1,23 @@
 @use '../abstracts' as *;
 
 .hero {
-  &-section {
-    .container {
-      --row-gap: #{fluid(40, 20)};
-      align-items: center;
-    }
-
-    .section-subtitle {
-      margin-block-end: fluid(24, 20);
+  padding-block: var(--section-padding-y-sm);
+  &-container {
+    display: grid;
+    grid-template-columns: 1fr 32%;
+    align-items: center;
+    gap: fluid(40, 20) fluid(24, 20);
+    @include breakpoint-md-down {
+      grid-template-columns: 1fr;
+      text-align: center;
     }
   }
 
-  &-image {
+  &-subtitle {
+    margin-block-end: fluid(24, 20);
+  }
+
+  &-image-wrap {
     grid-column: 1 / -1;
     img {
       width: 100%;
