@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.features {
+  padding-block: var(--section-padding-y-sm);
+  background-color: var(--cream-lite-color);
+  &-intro {
+    display: grid;
+    grid-template-columns: fit-content(toRem(608)) fit-content(toRem(496));
+    justify-content: space-between;
+    gap: fluid(24, 12);
+    margin-block-end: fluid(52, 40);
+    @include breakpoint-md-down {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: 397fr 292fr 292fr 187fr;
+    align-items: start;
+    gap: fluid(24, 20);
+    @include breakpoint-lg-down {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
+    }
+
+    @include breakpoint-sm-down {
+      grid-template-columns: 1fr;
+    }
+  }
+}

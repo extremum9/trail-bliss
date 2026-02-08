@@ -1,12 +1,13 @@
 @use '../abstracts' as *;
 
 .hero {
-  padding-block: var(--section-padding-y-sm);
-  &-container {
+  padding-block: fluid(80, 20);
+  &-intro {
     display: grid;
     grid-template-columns: 1fr 32%;
     align-items: center;
-    gap: fluid(40, 20) fluid(24, 20);
+    gap: fluid(24, 20);
+    margin-block-end: fluid(40, 20);
     @include breakpoint-md-down {
       grid-template-columns: 1fr;
       text-align: center;

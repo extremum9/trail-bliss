@@ -4,53 +4,11 @@
   position: relative;
   overflow: hidden;
   border-radius: toRem(16);
-  @include breakpoint-lg-down {
-    grid-column: span 6;
-    height: 100%;
-  }
-
-  &-layout-bottom,
-  &-layout-spread {
-    .feature-card-content {
-      display: flex;
-      justify-content: space-between;
-      gap: toRem(16);
-    }
-  }
-
-  &-layout-bottom,
+  transition: opacity var(--transition-duration)
+    var(--transition-timing-function);
+  &-wide,
+  &-tight,
   &-video {
-    &::before {
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 79%,
-        rgba(0, 0, 0, 0.6) 100%
-      );
-    }
-  }
-
-  &-layout-bottom {
-    .feature-card-content {
-      align-self: end;
-      align-items: center;
-    }
-  }
-
-  &-layout-spread {
-    &::before {
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0) 35.7%
-      );
-    }
-
-    .feature-card-content {
-      flex-direction: column;
-    }
-  }
-
-  &-cover {
     display: grid;
     isolation: isolate;
     &::before {
@@ -60,15 +18,57 @@
     }
 
     @include hover {
-      .feature-card-image img {
+      opacity: 0.9;
+      .feature-card-image-wrap img {
         scale: 1.1;
       }
     }
 
     @include breakpoint-lg-down {
-      .feature-card-image img {
+      .feature-card-image-wrap img {
         aspect-ratio: 362 / 260;
       }
+    }
+  }
+
+  &-wide,
+  &-tight {
+    .feature-card-content {
+      display: flex;
+      justify-content: space-between;
+      gap: toRem(16);
+    }
+  }
+
+  &-wide,
+  &-video {
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+    }
+  }
+
+  &-wide {
+    .feature-card-content {
+      align-self: end;
+      align-items: center;
+    }
+  }
+
+  &-tight {
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 60%
+      );
+    }
+
+    .feature-card-content {
+      flex-direction: column;
     }
   }
 
@@ -77,6 +77,10 @@
     .feature-card-title {
       margin-block-end: fluid(20, 12);
       color: var(--primary-color);
+    }
+
+    @include breakpoint-sm-down {
+      text-align: center;
     }
   }
 
@@ -87,33 +91,32 @@
     }
   }
 
-  &-image,
+  &-image-wrap,
   &-content {
     grid-area: 1 / 1;
   }
 
-  &-image {
+  &-image-wrap {
     z-index: -1;
     img {
       width: 100%;
       height: 100%;
       scale: 1.001;
-      transition: var(--transition-duration) var(--transition-timing-function)
-        scale;
+      transition: scale var(--transition-duration)
+        var(--transition-timing-function);
     }
   }
 
   &-content {
     z-index: 1;
     padding: toRem(20);
-    text-align: left;
   }
 
   &-title {
     color: var(--light-color);
   }
 
-  &-description {
+  &-supporting-text {
     font-size: fluid(18, 14);
     font-weight: 500;
   }
