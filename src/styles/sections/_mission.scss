@@ -1,19 +1,20 @@
 @use '../abstracts' as *;
 
 .mission {
-  &-section {
-    .container {
-      align-items: center;
-    }
-
-    .section-content {
-      @include breakpoint-md-up {
-        grid-column: 1 / 7;
-      }
+  padding-block: var(--section-padding-y-lg);
+  &-container {
+    display: grid;
+    grid-template-columns: fit-content(toRem(608)) fit-content(toRem(503));
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid(40, 20);
+    @include breakpoint-md-down {
+      grid-template-columns: 1fr;
+      text-align: center;
     }
   }
 
-  &-image {
+  &-image-wrap {
     img {
       width: 100%;
       aspect-ratio: 503 / 500;
@@ -21,10 +22,6 @@
       @include breakpoint-xs-down {
         aspect-ratio: 362 / 280;
       }
-    }
-
-    @include breakpoint-md-up {
-      grid-column: 8 / -1;
     }
 
     @include breakpoint-md-down {

@@ -36,11 +36,14 @@
 
 .section {
   &-content {
-    display: grid;
-    justify-items: start;
-    row-gap: fluid(24, 20);
-    @include breakpoint-md-down {
-      justify-items: center;
+    .section {
+      &-title {
+        margin-block-end: fluid(24, 12);
+      }
+
+      &-supporting-text {
+        margin-block-end: fluid(24, 20);
+      }
     }
   }
 
