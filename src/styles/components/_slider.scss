@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.slider {
+  &-navigation {
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+  }
+
+  &-button {
+    display: inline-grid;
+    place-content: center;
+    width: toRem(40);
+    height: toRem(40);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    transition-property: color, background-color;
+    @include hover {
+      color: var(--light-color);
+      background-color: var(--primary-color);
+    }
+
+    &-previous {
+      rotate: -180deg;
+    }
+  }
+}

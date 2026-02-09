@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.events {
+  padding-block: var(--section-padding-y-sm);
+  background-color: var(--cream-lite-color);
+  &-intro {
+    display: grid;
+    grid-template-columns: fit-content(toRem(608)) toRem(92);
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid(40, 20);
+    margin-block-end: fluid(52, 20);
+  }
+}
