@@ -2,14 +2,13 @@
 
 .event-card {
   position: relative;
-  width: 700px;
-  margin-block-end: 10px;
   padding: toRem(20);
   border-radius: toRem(16);
   background-color: var(--light-color);
   &-image-wrap {
     margin-block-end: toRem(20);
     img {
+      width: 100%;
       aspect-ratio: 660 / 409;
       border-radius: toRem(16);
     }

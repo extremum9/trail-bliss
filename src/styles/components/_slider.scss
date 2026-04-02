@@ -16,13 +16,18 @@
     color: var(--primary-color);
     border-radius: 50%;
     transition-property: color, background-color;
-    @include hover {
-      color: var(--light-color);
-      background-color: var(--primary-color);
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     &-previous {
       rotate: -180deg;
+    }
+
+    @include hover {
+      color: var(--light-color);
+      background-color: var(--primary-color);
     }
   }
 }

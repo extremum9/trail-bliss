@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .events {
+  margin-block-end: 40px;
   padding-block: var(--section-padding-y-sm);
   background-color: var(--cream-lite-color);
   &-intro {
@@ -10,5 +11,12 @@
     justify-content: space-between;
     gap: fluid(40, 20);
     margin-block-end: fluid(52, 20);
+  }
+
+  &-slider {
+    padding-inline-start: max(
+      var(--container-padding-x),
+      (100% - var(--container-max-width)) / 2
+    );
   }
 }

@@ -14,6 +14,10 @@ body {
   }
 }
 
+main {
+  min-width: 0;
+}
+
 p {
   --paragraph-margin-bottom: #{toRem(10)};
 }
