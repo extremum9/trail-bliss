@@ -11,6 +11,11 @@
     justify-content: space-between;
     gap: fluid(40, 20);
     margin-block-end: fluid(52, 20);
+    @include breakpoint-xs-down {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
   }
 
   &-slider {
@@ -18,5 +23,9 @@
       var(--container-padding-x),
       (100% - var(--container-max-width)) / 2
     );
+
+    @include breakpoint-xs-down {
+      padding-inline-end: var(--container-padding-x);
+    }
   }
 }

@@ -1,7 +1,10 @@
 @use '../abstracts' as *;
 
 .event-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  height: 100%;
   padding: toRem(20);
   border-radius: toRem(16);
   background-color: var(--light-color);
@@ -17,24 +20,31 @@
   &-content {
     display: grid;
     grid-template-columns: fit-content(toRem(495)) fit-content(toRem(100));
-    align-items: end;
     justify-content: space-between;
+    flex-grow: 1;
     gap: fluid(24, 12);
+    @include breakpoint-xs-down {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-left {
     display: grid;
+    grid-template-rows: auto auto 1fr;
     justify-items: start;
     row-gap: toRem(8);
+    @include breakpoint-xs-down {
+      justify-items: center;
+      text-align: center;
+    }
   }
 
-  &-right {
-    display: flex;
-    flex-direction: column;
-    row-gap: toRem(4);
+  &-supporting-text {
+    align-self: end;
   }
 
   &-badge {
+    align-self: start;
     margin-inline-start: toRem(-2);
     padding: toRem(8) toRem(12);
     font-weight: 700;
@@ -43,8 +53,17 @@
     background-color: var(--cream-color);
   }
 
+  &-right {
+    display: grid;
+    align-self: end;
+    row-gap: toRem(4);
+    @include breakpoint-xs-down {
+      text-align: center;
+    }
+  }
+
   &-price {
-    font-size: toRem(40);
+    font-size: fluid(40, 32);
     font-weight: 700;
     line-height: 1.2;
     color: #2b2b2b;

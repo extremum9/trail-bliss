@@ -1,2 +1,6 @@
 @use 'swiper/css';
 @use 'swiper/css/navigation';
+
+.swiper-slide {
+  height: auto;
+}
