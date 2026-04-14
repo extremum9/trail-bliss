@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .events {
-  margin-block-end: 40px;
   padding-block: var(--section-padding-y-sm);
   background-color: var(--cream-lite-color);
   &-intro {

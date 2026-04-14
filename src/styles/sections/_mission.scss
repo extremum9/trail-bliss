@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: space-between;
     gap: fluid(40, 20);
+    :where(.mission-reversed) & {
+      grid-template-columns: fit-content(toRem(503)) fit-content(toRem(608));
+    }
+
     @include breakpoint-md-down {
       grid-template-columns: 1fr;
       text-align: center;
