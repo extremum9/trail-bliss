@@ -9,6 +9,16 @@
     align-items: start;
     justify-content: space-between;
     gap: fluid(40, 20);
+    @include breakpoint-md-down {
+      grid-template-columns: 1fr;
+      .section-content {
+        text-align: center;
+      }
+
+      .slider-navigation {
+        justify-content: center;
+      }
+    }
   }
 
   .section-supporting-text {
