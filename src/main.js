@@ -27,3 +27,13 @@ new Swiper('.js-events-slider', {
     }
   }
 });
+
+new Swiper('.js-testimonials-slider', {
+  modules: [Navigation, A11y],
+  slidesPerView: 2,
+  spaceBetween: 24,
+  navigation: {
+    nextEl: '.js-testimonials-slider-button-next',
+    prevEl: '.js-testimonials-slider-button-previous'
+  }
+});

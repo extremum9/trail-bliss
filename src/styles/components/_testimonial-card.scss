@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: toRem(20) toRem(30);
+  border-radius: toRem(12);
+  background-color: var(--light-color);
+  &-quote {
+    position: relative;
+    margin-block-end: toRem(16);
+    padding-block-start: toRem(37);
+    color: var(--dark-color);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: toRem(21);
+      height: toRem(15);
+      background: url('/icons/quote.svg') center / cover no-repeat;
+    }
+  }
+
+  &-meta {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(12);
+    margin-block-start: auto;
+  }
+
+  &-author {
+    &-info {
+      display: grid;
+      justify-items: start;
+    }
+
+    &-name {
+      color: var(--dark-color);
+    }
+
+    &-location {
+      font-size: toRem(14);
+      color: var(--gray-dark-color);
+    }
+  }
+}
