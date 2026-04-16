@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.faq {
+  padding-block: var(--section-padding-y-sm);
+  &-title {
+    max-width: toRem(608);
+    margin: 0 auto fluid(40, 32);
+    text-align: center;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: fit-content(toRem(503)) fit-content(toRem(590));
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid(40, 32);
+  }
+
+  &-image-wrap {
+    img {
+      width: 100%;
+      aspect-ratio: 503 / 580;
+      border-radius: toRem(16);
+    }
+  }
+}
