@@ -2,6 +2,10 @@ import Swiper from 'swiper';
 import { Navigation, A11y } from 'swiper/modules';
 
 import initTopbar from './modules/topbar';
+import {
+  SELECTORS as ACCORDION_SELECTORS,
+  initAccordion
+} from './modules/accordion';
 
 initTopbar();
 
@@ -44,3 +48,6 @@ new Swiper('.js-testimonials-slider', {
     }
   }
 });
+
+const accordions = document.querySelectorAll(ACCORDION_SELECTORS.ROOT);
+accordions.forEach((accordion) => initAccordion(accordion));
