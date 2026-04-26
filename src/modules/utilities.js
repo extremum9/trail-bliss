@@ -1,5 +1,9 @@
 export const toEm = (px) => `${px / 16}em`;
 
+export const reflow = (element) => {
+  element.offsetHeight;
+};
+
 export const throttle = (callback, delay = 300) => {
   let throttled = false;
   let savedArgs = null;
