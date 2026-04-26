@@ -77,6 +77,15 @@ const initAccordion = (root) => {
     );
   };
 
+  const closeActive = () => {
+    root
+      .querySelectorAll(`${SELECTORS.BUTTON}.${STATE_CLASSES.OPEN}`)
+      .forEach((button) => {
+        const panel = root.querySelector(button.dataset.target);
+        close({ button, panel });
+      });
+  };
+
   root.addEventListener('click', (event) => {
     const button = event.target.closest(SELECTORS.BUTTON);
     if (!button) {
@@ -87,6 +96,7 @@ const initAccordion = (root) => {
     if (panel.classList.contains(STATE_CLASSES.OPEN)) {
       close({ button, panel });
     } else {
+      closeActive();
       open({ button, panel });
     }
   });
