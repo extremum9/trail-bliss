@@ -1,8 +1,6 @@
 @use '../abstracts' as *;
 
 .accordion {
-  display: grid;
-  row-gap: toRem(12);
   &-item {
     border-bottom: 1px solid #eeeeee;
   }
@@ -20,8 +18,8 @@
   &-indicator {
     flex-shrink: 0;
     position: relative;
-    width: toRem(16);
-    height: toRem(16);
+    width: fluid(16, 12);
+    height: fluid(16, 12);
     color: var(--primary-color);
     &::before,
     &::after {
@@ -69,5 +67,6 @@
 
   &-body {
     padding: toRem(12);
+    font-size: fluid(16, 14);
   }
 }

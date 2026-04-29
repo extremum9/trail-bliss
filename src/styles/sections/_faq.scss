@@ -9,11 +9,14 @@
   }
 
   &-container {
-    display: grid;
-    grid-template-columns: fit-content(toRem(503)) fit-content(toRem(590));
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: fluid(40, 32);
+    @include breakpoint-md-down {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   &-image-wrap {
@@ -21,6 +24,16 @@
       width: 100%;
       aspect-ratio: 503 / 580;
       border-radius: toRem(16);
+    }
+
+    @include breakpoint-md-up {
+      flex-basis: toRem(503);
+    }
+  }
+
+  .accordion {
+    @include breakpoint-md-up {
+      flex-basis: toRem(590);
     }
   }
 }
