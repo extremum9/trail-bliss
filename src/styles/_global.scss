@@ -10,7 +10,6 @@ body {
   background-color: var(--light-color);
   &.prevent-scroll {
     overflow: hidden;
-    overscroll-behavior: none;
   }
 }
 

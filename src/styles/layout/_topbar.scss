@@ -59,6 +59,7 @@
     opacity: 0;
     visibility: hidden;
     overflow-y: auto;
+    overscroll-behavior: none;
     text-align: center;
     background-color: var(--cream-lite-color);
     transition:
