@@ -1,56 +1,57 @@
 import { throttle, toEm } from './utilities.js';
 
+const SELECTORS = {
+  ROOT: '.js-topbar',
+  TOGGLE_BUTTON: '.js-nav-toggle-button'
+};
+
+const STATE_CLASSES = {
+  PREVENT_SCROLL: 'prevent-scroll',
+  MENU_OPEN: 'menu-open',
+  SCROLL: 'scroll'
+};
+
+const SCROLL_THRESHOLD = 30;
+
 const initTopbar = () => {
-  const selectors = {
-    root: '.js-topbar',
-    toggleButton: '.js-nav-toggle-button'
-  };
-
-  const stateClasses = {
-    preventScroll: 'prevent-scroll',
-    menuOpen: 'menu-open'
-  };
-
   const body = document.body;
-  const root = document.querySelector(selectors.root);
-  const toggleButton = document.querySelector(selectors.toggleButton);
-  const tabletMediaQuery = window.matchMedia(`(max-width: ${toEm(991.98)})`);
-
-  const updateHeight = () =>
-    root.style.setProperty('--topbar-height', `${root.offsetHeight}px`);
-  const resizeObserver = new ResizeObserver(updateHeight);
-
-  resizeObserver.observe(root);
-  updateHeight();
+  const root = document.querySelector(SELECTORS.ROOT);
+  const toggleButton = document.querySelector(SELECTORS.TOGGLE_BUTTON);
+  const tabletMediaQuery = window.matchMedia(`(width < ${toEm(992)})`);
 
   const toggleMenu = () => {
-    body.classList.toggle(stateClasses.preventScroll);
-    root.classList.contains(stateClasses.menuOpen)
-      ? toggleButton.setAttribute('aria-expanded', 'false')
-      : toggleButton.setAttribute('aria-expanded', 'true');
-    root.classList.toggle(stateClasses.menuOpen);
+    body.classList.toggle(STATE_CLASSES.PREVENT_SCROLL);
+    const opened = root.classList.toggle(STATE_CLASSES.MENU_OPEN);
+    toggleButton.setAttribute('aria-expanded', `${opened}`);
   };
 
   const resetMenu = (mediaQuery) => {
     if (!mediaQuery.matches) {
-      body.classList.remove(stateClasses.preventScroll);
-      root.classList.remove(stateClasses.menuOpen);
+      body.classList.remove(STATE_CLASSES.PREVENT_SCROLL);
+      root.classList.remove(STATE_CLASSES.MENU_OPEN);
       toggleButton.setAttribute('aria-expanded', 'false');
     }
   };
 
-  const scrollThreshold = 30;
-  const toggleScrollClass = () => {
-    window.scrollY > scrollThreshold
-      ? root.classList.add('scroll')
-      : root.classList.remove('scroll');
-  };
+  const updateHeight = () =>
+    root.style.setProperty('--topbar-height', `${root.offsetHeight}px`);
+
+  const toggleScrollClass = () =>
+    root.classList.toggle(
+      STATE_CLASSES.SCROLL,
+      window.scrollY > SCROLL_THRESHOLD
+    );
+
+  const resizeObserver = new ResizeObserver(updateHeight);
+  resizeObserver.observe(root);
+
+  resetMenu(tabletMediaQuery);
+  updateHeight();
+  toggleScrollClass();
 
   toggleButton.addEventListener('click', toggleMenu);
   tabletMediaQuery.addEventListener('change', resetMenu);
   window.addEventListener('scroll', throttle(toggleScrollClass));
-  resetMenu(tabletMediaQuery);
-  toggleScrollClass();
 };
 
 export default initTopbar;
