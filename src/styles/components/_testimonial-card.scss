@@ -37,6 +37,8 @@
     }
 
     &-name {
+      font-size: toRem(16);
+      font-weight: 400;
       color: var(--dark-color);
     }
 
